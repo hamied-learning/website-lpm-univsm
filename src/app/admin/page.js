@@ -57,9 +57,18 @@ const tabConfig = {
     icon: <FileCheck className="w-5 h-5 mr-3" />,
     fields: [
       { name: 'nama_dokumen', label: 'Nama Dokumen' },
-      { name: 'kategori_ppepp', label: 'Kategori (PPEPP / SOP)', type: 'select', options: ['Penetapan', 'Pelaksanaan', 'Evaluasi', 'Pengendalian', 'Peningkatan', 'SOP'] },
+      { name: 'kategori_ppepp', label: 'Kategori (PPEPP)', type: 'select', options: ['Penetapan', 'Pelaksanaan', 'Evaluasi', 'Pengendalian', 'Peningkatan'] },
       { name: 'tipe_file', label: 'Tipe File (Contoh: PDF, Link, Drive)' },
       { name: 'ukuran', label: 'Ukuran File (Kosongkan jika Link)' },
+      { name: 'url_dokumen', label: 'Link URL Dokumen / Google Drive' }
+    ] 
+  },
+  SOP: { 
+    type: 'multi',
+    icon: <FileCheck className="w-5 h-5 mr-3 text-purple-400" />,
+    fields: [
+      { name: 'tingkat', label: 'Tingkat SOP', type: 'select', options: ['SOP Tingkat Universitas', 'SOP Tingkat Fakultas'] },
+      { name: 'jenis_sop', label: 'Jenis SOP' },
       { name: 'url_dokumen', label: 'Link URL Dokumen / Google Drive' }
     ] 
   },
