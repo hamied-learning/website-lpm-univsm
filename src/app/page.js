@@ -457,7 +457,7 @@ export default function Home() {
   };
 
   const DokumenPage = () => {
-    const categories = ['Semua', 'Penetapan', 'Pelaksanaan', 'Evaluasi', 'Pengendalian', 'Peningkatan'];
+    const categories = ['Semua', 'Penetapan', 'Pelaksanaan', 'Evaluasi', 'Pengendalian', 'Peningkatan', 'SOP'];
     const filteredDocs = docCategory === 'Semua' ? documents : documents.filter(doc => doc.kategori_ppepp === docCategory);
 
     return (

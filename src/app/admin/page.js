@@ -57,10 +57,10 @@ const tabConfig = {
     icon: <FileCheck className="w-5 h-5 mr-3" />,
     fields: [
       { name: 'nama_dokumen', label: 'Nama Dokumen' },
-      { name: 'kategori_ppepp', label: 'Kategori (PPEPP)', type: 'select', options: ['Penetapan', 'Pelaksanaan', 'Evaluasi', 'Pengendalian', 'Peningkatan'] },
-      { name: 'tipe_file', label: 'Tipe File (Contoh: PDF, DOCX)' },
-      { name: 'ukuran', label: 'Ukuran File (Contoh: 2 MB)' },
-      { name: 'url_dokumen', label: 'Link URL Dokumen' }
+      { name: 'kategori_ppepp', label: 'Kategori (PPEPP / SOP)', type: 'select', options: ['Penetapan', 'Pelaksanaan', 'Evaluasi', 'Pengendalian', 'Peningkatan', 'SOP'] },
+      { name: 'tipe_file', label: 'Tipe File (Contoh: PDF, Link, Drive)' },
+      { name: 'ukuran', label: 'Ukuran File (Kosongkan jika Link)' },
+      { name: 'url_dokumen', label: 'Link URL Dokumen / Google Drive' }
     ] 
   },
   Peraturan: { 
