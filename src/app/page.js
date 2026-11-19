@@ -14,6 +14,23 @@ import {
 // =========================================================================
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzikbzH43irKSoEmNscn_It4XFXcgA6RtlErWdL-nZHwScREiX-coZyxCQetb-B9buwVw/exec"; 
 
+// Fungsi untuk mengubah link Google Drive menjadi format preview (buka langsung file)
+const getGDrivePreviewUrl = (url) => {
+  if (!url) return null;
+  // Format: https://drive.google.com/file/d/FILE_ID/view?... => preview
+  const matchFile = url.match(/drive\.google\.com\/file\/d\/([^\/\?]+)/);
+  if (matchFile) {
+    return `https://drive.google.com/file/d/${matchFile[1]}/preview`;
+  }
+  // Format: https://drive.google.com/open?id=FILE_ID
+  const matchOpen = url.match(/drive\.google\.com\/open\?id=([^&]+)/);
+  if (matchOpen) {
+    return `https://drive.google.com/file/d/${matchOpen[1]}/preview`;
+  }
+  // Jika bukan link Google Drive, kembalikan apa adanya
+  return url;
+};
+
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileSurveiOpen, setMobileSurveiOpen] = useState(false);
@@ -497,7 +514,7 @@ export default function Home() {
                       <td className="p-4 text-sm text-gray-600"><span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-semibold">{doc.kategori_ppepp}</span></td>
                       <td className="p-4 text-sm text-gray-600 font-mono bg-gray-50 rounded px-2">{doc.tipe_file}</td><td className="p-4 text-sm text-gray-600">{doc.ukuran}</td>
                       <td className="p-4 text-center">
-                        {doc.url_dokumen ? ( <a href={doc.url_dokumen} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-900 bg-blue-50 hover:bg-blue-100 p-2 rounded inline-flex items-center transition"><Download className="w-4 h-4" /></a>
+                        {doc.url_dokumen ? ( <a href={getGDrivePreviewUrl(doc.url_dokumen)} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-900 bg-blue-50 hover:bg-blue-100 p-2 rounded inline-flex items-center transition"><Download className="w-4 h-4" /></a>
                         ) : ( <span className="text-xs text-red-500">No Link</span> )}
                       </td>
                     </tr>
@@ -537,7 +554,7 @@ export default function Home() {
                     <td className="p-4 text-center font-medium text-gray-600">{idx + 1}</td>
                     <td className="p-4 font-medium text-gray-800 flex items-center"><FileText className="w-5 h-5 text-blue-500 mr-3 shrink-0" /> {doc.jenis_sop}</td>
                     <td className="p-4 text-center">
-                      {doc.url_dokumen ? ( <a href={doc.url_dokumen} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-900 bg-blue-50 hover:bg-blue-100 px-4 py-2 rounded inline-flex items-center transition font-semibold"><LinkIcon className="w-4 h-4 mr-2" /> Buka Drive</a>
+                      {doc.url_dokumen ? ( <a href={getGDrivePreviewUrl(doc.url_dokumen)} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-900 bg-blue-50 hover:bg-blue-100 px-4 py-2 rounded inline-flex items-center transition font-semibold"><LinkIcon className="w-4 h-4 mr-2" /> Buka Drive</a>
                       ) : ( <span className="text-xs text-red-500">No Link</span> )}
                     </td>
                   </tr>
