@@ -418,7 +418,7 @@ export default function Home() {
                         {item.peringkat}
                       </span>
                       {item.url_sk && (
-                        <a href={item.url_sk} target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg flex items-center transition shadow-sm font-semibold text-sm">
+                        <a href={getGDrivePreviewUrl(item.url_sk)} target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg flex items-center transition shadow-sm font-semibold text-sm">
                           <Download className="w-4 h-4 mr-2" /> Unduh SK PT
                         </a>
                       )}
@@ -462,7 +462,7 @@ export default function Home() {
                         </td>
                         <td className="p-4 text-center text-gray-600">{item.masa_berlaku}</td>
                         <td className="p-4 text-center">
-                          {item.url_sk ? ( <a href={item.url_sk} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-900 bg-blue-50 hover:bg-blue-100 p-2 rounded inline-flex items-center transition"><Download className="w-4 h-4" /></a>
+                          {item.url_sk ? ( <a href={getGDrivePreviewUrl(item.url_sk)} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-900 bg-blue-50 hover:bg-blue-100 p-2 rounded inline-flex items-center transition"><Download className="w-4 h-4" /></a>
                           ) : ( <span className="text-xs text-gray-400">-</span> )}
                         </td>
                       </tr>
