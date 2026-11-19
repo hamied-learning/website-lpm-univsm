@@ -49,7 +49,8 @@ const tabConfig = {
       { name: 'strata', label: 'Strata', type: 'select', options: ['-', 'D3', 'D4', 'S1', 'S2', 'S3'] },
       { name: 'peringkat', label: 'Peringkat Akreditasi', type: 'select', options: ['Baik', 'Baik Sekali', 'Terakreditasi', 'Unggul', 'Internasional'] },
       { name: 'masa_berlaku', label: 'Masa Berlaku (Tahun)' },
-      { name: 'url_sk', label: 'URL SK Akreditasi (Link Google Drive/PDF)' }
+      { name: 'url_sk', label: 'URL SK Akreditasi (Link Google Drive)' },
+      { name: 'url_sertifikat', label: 'URL Sertifikat Akreditasi (Link Google Drive)' }
     ] 
   },
   Dokumen: { 

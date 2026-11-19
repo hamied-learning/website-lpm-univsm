@@ -419,7 +419,12 @@ export default function Home() {
                       </span>
                       {item.url_sk && (
                         <a href={getGDrivePreviewUrl(item.url_sk)} target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg flex items-center transition shadow-sm font-semibold text-sm">
-                          <Download className="w-4 h-4 mr-2" /> Unduh SK PT
+                          <Download className="w-4 h-4 mr-2" /> Lihat SK
+                        </a>
+                      )}
+                      {item.url_sertifikat && (
+                        <a href={getGDrivePreviewUrl(item.url_sertifikat)} target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg flex items-center transition shadow-sm font-semibold text-sm">
+                          <Download className="w-4 h-4 mr-2" /> Lihat Sertifikat
                         </a>
                       )}
                     </div>
