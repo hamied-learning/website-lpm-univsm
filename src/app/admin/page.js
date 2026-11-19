@@ -336,6 +336,9 @@ export default function AdminDashboard() {
               field.name !== 'url_foto_profil' && 
               field.name !== 'url_berita' && 
               field.name !== 'file_url' && 
+              field.name !== 'url_sk' && 
+              field.name !== 'url_sertifikat' && 
+              field.name !== 'ukuran' && 
               activeTab !== 'LinkSurvei' && 
               !field.name.includes('skor_')
             } 

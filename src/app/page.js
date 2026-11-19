@@ -413,7 +413,7 @@ export default function Home() {
                       <h3 className="text-xl font-bold text-gray-800">{item.prodi || 'Universitas Sapta Mandiri'}</h3>
                       <p className="text-sm text-gray-500 mt-1">Masa Berlaku: <span className="font-semibold text-gray-700">{item.masa_berlaku || '-'}</span></p>
                     </div>
-                    <div className="flex items-center gap-3 shrink-0">
+                    <div className="flex flex-wrap items-center gap-3 shrink-0">
                       <span className="px-4 py-2 rounded-full text-sm font-bold bg-green-100 text-green-800">
                         {item.peringkat}
                       </span>
@@ -423,7 +423,7 @@ export default function Home() {
                         </a>
                       )}
                       {item.url_sertifikat && (
-                        <a href={getGDrivePreviewUrl(item.url_sertifikat)} target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg flex items-center transition shadow-sm font-semibold text-sm">
+                        <a href={getGDrivePreviewUrl(item.url_sertifikat)} target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg flex items-center transition shadow-sm font-semibold text-sm">
                           <Download className="w-4 h-4 mr-2" /> Lihat Sertifikat
                         </a>
                       )}
@@ -467,8 +467,11 @@ export default function Home() {
                         </td>
                         <td className="p-4 text-center text-gray-600">{item.masa_berlaku}</td>
                         <td className="p-4 text-center">
-                          {item.url_sk ? ( <a href={getGDrivePreviewUrl(item.url_sk)} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-900 bg-blue-50 hover:bg-blue-100 p-2 rounded inline-flex items-center transition"><Download className="w-4 h-4" /></a>
-                          ) : ( <span className="text-xs text-gray-400">-</span> )}
+                          <div className="flex flex-wrap justify-center gap-2">
+                            {item.url_sk && ( <a href={getGDrivePreviewUrl(item.url_sk)} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-900 bg-blue-50 hover:bg-blue-100 px-3 py-1.5 rounded inline-flex items-center transition text-xs font-semibold"><Download className="w-3.5 h-3.5 mr-1.5" /> SK</a> )}
+                            {item.url_sertifikat && ( <a href={getGDrivePreviewUrl(item.url_sertifikat)} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-900 bg-blue-50 hover:bg-blue-100 px-3 py-1.5 rounded inline-flex items-center transition text-xs font-semibold"><Download className="w-3.5 h-3.5 mr-1.5" /> Sertifikat</a> )}
+                            {!item.url_sk && !item.url_sertifikat && ( <span className="text-xs text-gray-400">-</span> )}
+                          </div>
                         </td>
                       </tr>
                     )) : ( <tr><td colSpan="5" className="p-8 text-center text-gray-500">Belum ada data akreditasi prodi yang tersimpan.</td></tr> )}
