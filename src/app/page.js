@@ -452,7 +452,7 @@ export default function Home() {
                       <th className="p-4 font-semibold">Strata</th>
                       <th className="p-4 font-semibold text-center">Peringkat</th>
                       <th className="p-4 font-semibold text-center">Masa Berlaku</th>
-                      <th className="p-4 font-semibold text-center">Unduh SK</th>
+                      <th className="p-4 font-semibold text-center">Dokumen</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100">
